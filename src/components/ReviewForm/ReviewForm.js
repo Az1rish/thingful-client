@@ -11,6 +11,7 @@ export default class ReviewForm extends Component {
     ev.preventDefault()
     const { thing } = this.context
     const { text, rating } = ev.target
+    console.log(`Thing is ${thing}`)
 
     ThingApiService.postReview(thing.id, text.value, Number(rating.value))
       .then(this.context.addReview)
